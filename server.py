@@ -7,6 +7,8 @@ import torchvision
 import os
 import requests
 import gdown
+from fastapi.responses import HTMLResponse
+
 
 app = FastAPI()
 
@@ -82,3 +84,8 @@ async def predict(
 @app.get("/")
 def home():
     return {"message": "Food AI работает 🚀"}
+
+@app.get("/", response_class=HTMLResponse)
+async def read_items():
+    with open("index.html", "r", encoding="utf-8") as f:
+        return f.read()
