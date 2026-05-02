@@ -26,7 +26,7 @@ if os.path.exists(MODEL_PATH):
 # 🔽 скачивание модели если нет
 
 print("Скачиваю модель...")
-url = "https://drive.google.com/file/d/1iJlftLIQrfj1PoTwfrzW-fTTXQB8cigw/view?usp=drive_link"
+url = "https://drive.google.com/uc?export=download&id=1iJlftLIQrfj1PoTwfrzW-fTTXQB8cigw"
 r = requests.get(url)
 open(MODEL_PATH, "wb").write(r.content)
 
