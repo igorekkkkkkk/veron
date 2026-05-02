@@ -48,7 +48,7 @@ async function send() {
     formData.append("file", file);
     formData.append("weight", weight);
 
-    let res = await fetch("http://127.0.0.1:8000/predict", {
+    let res = await fetch("https://food-ai-2243.onrender.com", {
         method: "POST",
         body: formData
     });
