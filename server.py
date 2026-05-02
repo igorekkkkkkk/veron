@@ -33,7 +33,7 @@ open(MODEL_PATH, "wb").write(r.content)
 # 🧠 загрузка модели
 model = torchvision.models.resnet18()
 model.fc = torch.nn.Linear(model.fc.in_features, 5)
-model.load_state_dict(torch.load(MODEL_PATH, map_location="cpu", weights_only=True))
+model.load_state_dict(torch.load(MODEL_PATH, map_location="cpu", weights_only=False))
 model.eval()
 
 # 📚 классы (ВАЖНО: как в train.py)
