@@ -31,7 +31,7 @@ if not os.path.exists(MODEL_PATH):
 # 🧠 загрузка модели
 model = torchvision.models.resnet18()
 model.fc = torch.nn.Linear(model.fc.in_features, 5)
-model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device("cpu")))
+model.load_state_dict(torch.load(MODEL_PATH, map_location="cpu", weights_only=True))
 model.eval()
 
 # 📚 классы (ВАЖНО: как в train.py)
